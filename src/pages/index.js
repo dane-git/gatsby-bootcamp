@@ -4,8 +4,6 @@ import { Link } from "gatsby" //Link -> optimized react component to creat very 
 // USE Link to between page within gatsby and the classic a tag for external link
 
 import Layout from "../components/layout"
-import Header from "../components/header"
-import Footer from "../components/footer"
 
 const IndexPage = () => {
   return (
@@ -19,14 +17,6 @@ const IndexPage = () => {
         Need a developer <Link to="/contact">Contact Me Fast</Link>
       </p>
     </Layout>
-  )
-
-  return (
-    <div>
-      <Header></Header>
-
-      <Footer></Footer>
-    </div>
   )
 }
 
