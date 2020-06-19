@@ -1,27 +1,62 @@
 import React from "react"
 import { Link } from "gatsby"
 
+// import "./header.module.scss"
+import headerStyles from "./header.module.scss"
+
 const Header = () => {
   return (
-    <header>
-      <h1>Gatsby Bootcamp</h1>
+    <header className={headerStyles.header}>
+      <h1>
+        <Link className={headerStyles.title} to="/">
+          Gatsby Bootcamp
+        </Link>
+      </h1>
       <nav>
         <div class="basic-nav">
-          <ul>
+          <ul className={headerStyles.navList}>
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                className={headerStyles.navItem}
+                activeClassName={headerStyles.activeNavItem}
+                to="/"
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact Me Fast</Link>
+              <Link
+                className={headerStyles.navItem}
+                activeClassName={headerStyles.activeNavItem}
+                to="/contact"
+              >
+                Contact Me
+              </Link>
             </li>
             <li>
-              <Link to="/about">About Me</Link>
+              <Link
+                className={headerStyles.navItem}
+                activeClassName={headerStyles.activeNavItem}
+                to="/about"
+              >
+                About Me
+              </Link>
             </li>
             <li>
-              <Link to="/blog">My Blog</Link>
+              <Link
+                className={headerStyles.navItem}
+                activeClassName={headerStyles.activeNavItem}
+                to="/blog"
+              >
+                My Blog
+              </Link>
             </li>
             <li>
-              <a href="https://www.google.com" target="_blank">
+              <a
+                className={headerStyles.navItem}
+                href="https://www.google.com"
+                target="_blank"
+              >
                 Get out of here
               </a>
             </li>
