@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Youtube Bootcamp",
+    title: "Gatsby Youtube Bootcamp!",
     author: "Anoni Mus",
   },
   /* Your site config here */
