@@ -1,5 +1,5 @@
 ---
-title: "Gatsby  Bootcampt",
+title: "Gatsby  Bootcampt"
 date: "06/21/2020"
 ---
 

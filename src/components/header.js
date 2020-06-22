@@ -25,7 +25,7 @@ const Header = () => {
         </Link>
       </h1>
       <nav>
-        <div class="basic-nav">
+        <div className="basic-nav">
           <ul className={headerStyles.navList}>
             <li>
               <Link

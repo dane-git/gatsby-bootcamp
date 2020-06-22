@@ -13,11 +13,17 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "src",
-        path: `${__dirname}/src`,
+        name: `src`,
+        path: `${__dirname}/src/posts`,
       },
     },
+    `gatsby-transformer-remark`,
   ],
 }
+
+// SHABZ KHAN
+// 1 month ago
+// Thanks Andrew for  this tutorial. The way you deliver keeps me going on...
+// On other hand, anyone who got "MarkdownRemark.excerpt@format cannot convert to InputType the following string: 'MarkdownExcerptFormats'" error and fixed it, help would be appreciated.

@@ -7,7 +7,7 @@ const contactMe = () => {
     <Layout>
       <div>
         <h1>Contact US</h1>
-        <div class="contact-info">
+        <div className="contact-info">
           <address>
             <a href="mailto:example@example.com">Email us</a>
             <a href="tel:555-555-5555">555-555-5555</a>

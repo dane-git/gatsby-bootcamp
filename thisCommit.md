@@ -1,53 +1,30 @@
-# "Dynamic" content with graphql source filesystem
+# Target markdown and use them on site
 
-## Creating more complex posts template
+1. install remark -> gatsby-transformer-remark
+   > `npm i --save gatsby-transformer-remark`
+2. add `gatsby-transformer-remark` to plugins array in gatsby-config.js.
+   > At [graphQL playGround](http://localhost:8000/___graphql) two new queries are now available.
+   >
+   > 1. markdownRemark()
+   > 2. allMarkdownRemark()  
+  !!! NOTE: had to change gatsby-config.js gatsby-source-filesystem path option to point to specific posts folder
 
-1. start with front matter
-
-   ```
-    ---
-      key: "value",
-      title: "Gatsby Bootcamp"
-      date: "today"
-    ---
-   ```
-
-2. actual md content...
-
-
-## Add gastsby sourse filesystem
-1. in project root directory:  
-   > ``` npm i gatsby-source-filesystem ```
-2. add plugin to gastby-congig.js  
-  : within gatsby-config.js file, extend plugins array to include:  
-  > ```js
-  > {
-  >     resolve: 'gatsby-soruce-filesystyem',
-  >     options: {
-  >           name: "src",
-  >           path: `${__dirname}/src/`
-  >         }
-  > }
-  > ```
-  > !!! a1 resolve is the default opertaion if just a string is given
-  > !!! a2  `${__dirname}` is a node thing, -> gatsby-config.js is a nodejs file.  *note the **module.exports = {}***
-  > !!! a3 the path assigns this path to be able to be queried by gastby
-
-The addition of gatsby-source-filesystem allows graphql to query the file system. Now one can make a query (try in the [graphQL playground](http://localhost:8000/___graphql)) like:  
-```json
-query {
-	allFile {
-    edges {
-      node {
-        name
-        extension
-        dir
-      }
-    }
-  }
-}
-```
-The above query will show you the name, extension, and directory of the files in the ./src directory
-
-        
-        
+3. add front matter posts content to blog list page -> blog.js
+   1.  get query data using useStaticQuery(graphql`query{}`)
+   2.  Iterate over edges array, take the edge's object and conver that to a list item :
+    > ```jsx
+    > // this is an array objects: {data.allMarkdownRemark.edges}
+    > // what we need is an array of jsx elements
+    > // use the map() function to convert the object to jsx element
+    > // acces array 
+    >
+    >
+    > {data.allMarkdownRemark.edges.map((edge) => {
+    >   return(
+    >  <li>
+    >    <h2>edge.node.frontmatter.title</h2>
+    >    <p>edge.node.frontmatter.date</p>
+    >  </li>
+    > )
+    > })}
+    >```
