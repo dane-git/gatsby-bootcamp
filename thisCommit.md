@@ -1,30 +1,34 @@
-# Target markdown and use them on site
+# create a new page for each post.
 
-1. install remark -> gatsby-transformer-remark
-   > `npm i --save gatsby-transformer-remark`
-2. add `gatsby-transformer-remark` to plugins array in gatsby-config.js.
-   > At [graphQL playGround](http://localhost:8000/___graphql) two new queries are now available.
-   >
-   > 1. markdownRemark()
-   > 2. allMarkdownRemark()  
-  !!! NOTE: had to change gatsby-config.js gatsby-source-filesystem path option to point to specific posts folder
+gatsby api dynamicly generate new pages with dynamic content
 
-3. add front matter posts content to blog list page -> blog.js
-   1.  get query data using useStaticQuery(graphql`query{}`)
-   2.  Iterate over edges array, take the edge's object and conver that to a list item :
-    > ```jsx
-    > // this is an array objects: {data.allMarkdownRemark.edges}
-    > // what we need is an array of jsx elements
-    > // use the map() function to convert the object to jsx element
-    > // acces array 
-    >
-    >
-    > {data.allMarkdownRemark.edges.map((edge) => {
-    >   return(
-    >  <li>
-    >    <h2>edge.node.frontmatter.title</h2>
-    >    <p>edge.node.frontmatter.date</p>
-    >  </li>
-    > )
-    > })}
-    >```
+## Dyncamically generate pages for each and every post
+1. post clicked
+2. new page dynamically generated [_markDown Data from graphql_] +->BlogPageTemplate = ReactCompenent => newPage
+
+
+## Working with gatsby interanl API
+
+### GOAL-1 - Generate a slug for each post
+
+#### Slug
+: the files name stored as a string
+: **For_Example: gastby.md ->Slug => gastby  -> /blog/gatsby
+
+A [slug](#slug) allows us to setup the url for someone to see the post.  
+We need the slug from the filename in order to setup the correct endpoint for the post to finally be accessed. 
+
+### GOAL-2 - Generate the Blog post page template. -> react component
+
+### GOAL-3 - Using products of GOAL 1 and GOAL 2, Generate a newPage for every post
+
+<hr>
+
+TODO:  
+ ### FOR-GOAL-1
+1. Generate new file in project root directory: *gatsby-node.js* 
+   1. Gatsby node configuration file - Allows use of many node api's that gatsby exposes. This will be used to generate the slug and dynamically generate the blog post pages. 
+   2. [onCreateNode API](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode).  This allows us to attach new data onto the individual node.
+   3. ASIDE: Whats a node? -> a data structure for storing your gatsby data. -> think graphql queries.  , HOW TO DIRECTLY ACCESS AND MODIFY A NODE???
+
+### FOR-GOAL-2

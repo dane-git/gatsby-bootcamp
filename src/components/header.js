@@ -67,7 +67,6 @@ const Header = () => {
               <a
                 className={headerStyles.navItem}
                 href="https://www.google.com"
-                target="_blank"
               >
                 Get out of here
               </a>
