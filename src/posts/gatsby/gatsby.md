@@ -5,6 +5,8 @@ date: "06/21/2020"
 
 New bootcamp launch
 
+
+![karateKid](./karateKid.png)
 ## Topics Covered
 
 1. Gatsby
