@@ -1,1 +1,2 @@
-# THIS IS BASICALLY A FINAL TEMPLATE FOR LOCAL SOURCE GATSBY BLOG.
+# Connecting Gatsby to Content management system (CMS -> contentful)
+
